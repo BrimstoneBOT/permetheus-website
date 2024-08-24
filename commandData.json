@@ -1,0 +1,362 @@
+[
+  {
+    "name": "afk",
+    "description": "Set your AFK status.",
+    "options": [
+      {
+        "name": "reason",
+        "type": 3,
+        "description": "The reason you are going AFK",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "av",
+    "description": "Displays the avatar of the specified user.",
+    "options": [
+      {
+        "name": "user",
+        "type": 6,
+        "description": "The user whose avatar you want to display",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "bridge",
+    "description": "Displays the profile of another server using a stored profile ID.",
+    "options": [
+      {
+        "name": "profile_id",
+        "type": 3,
+        "description": "The ID of the server profile you want to display.",
+        "required": true
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "clearlvlroles",
+    "description": "Clears all level-role associations in this guild.",
+    "options": [],
+    "requiredPermissions": [
+      {
+        "name": "ManageGuild",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "deletejoinrole",
+    "description": "Removes the default join role for new members.",
+    "options": [],
+    "requiredPermissions": [
+      {
+        "name": "ManageRoles",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "displayserver",
+    "description": "Manage and display server statistics.",
+    "options": [
+      {
+        "name": "action",
+        "type": 3,
+        "description": "Action to perform",
+        "required": true,
+        "choices": [
+          {
+            "name": "Update",
+            "value": "update"
+          },
+          {
+            "name": "Display",
+            "value": "display"
+          },
+          {
+            "name": "Remove",
+            "value": "remove"
+          },
+          {
+            "name": "Set Custom ID",
+            "value": "setid"
+          }
+        ]
+      },
+      {
+        "name": "field",
+        "type": 3,
+        "description": "Field to update or remove",
+        "required": false
+      },
+      {
+        "name": "value",
+        "type": 3,
+        "description": "New value for the field",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "help",
+    "description": "Get help and information about the bot.",
+    "options": [],
+    "requiredPermissions": []
+  },
+  {
+    "name": "hug",
+    "description": "Give someone a hug!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to hug",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "jail",
+    "description": "Jails or unjails a user.",
+    "options": [
+      {
+        "name": "user",
+        "type": 6,
+        "description": "The user to jail or unjail",
+        "required": true
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageRoles",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "kill",
+    "description": "Unalive someone!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to unalive",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "kiss",
+    "description": "Give someone a kiss!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to kiss",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "leaderboard",
+    "description": "Displays The Top 10 Highest-Level Users in this server.",
+    "options": [],
+    "requiredPermissions": []
+  },
+  {
+    "name": "level",
+    "description": "Check a user's level and XP progress.",
+    "options": [
+      {
+        "name": "user",
+        "type": 6,
+        "description": "The user to check the level for (optional).",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "lewd",
+    "description": "Hold hands with someone! OwO",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to hold hands with..",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  },
+  {
+    "name": "lvlroles",
+    "description": "Displays all roles and their associated levels within the server.",
+    "options": [],
+    "requiredPermissions": []
+  },
+  {
+    "name": "purge",
+    "description": "Deletes a specified number of messages from the current channel, optionally from specific users.",
+    "options": [
+      {
+        "name": "amount",
+        "type": 4,
+        "description": "The number of messages to delete (up to 10000).",
+        "required": true,
+        "minValue": 1,
+        "maxValue": 10000
+      },
+      {
+        "name": "users",
+        "type": 3,
+        "description": "Mention users to delete messages from (optional).",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageMessages",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "removeprefix",
+    "description": "Remove the custom prefix and revert to slash commands only",
+    "options": [],
+    "requiredPermissions": [
+      {
+        "name": "ManageGuild",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "serverinfo",
+    "description": "Displays info about the current server.",
+    "options": [],
+    "requiredPermissions": []
+  },
+  {
+    "name": "setjail",
+    "description": "Sets or creates the jail channel and role.",
+    "options": [
+      {
+        "name": "channel",
+        "type": 7,
+        "description": "The jail channel (optional)",
+        "required": false
+      },
+      {
+        "name": "role",
+        "type": 8,
+        "description": "The jail role (optional)",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageChannels",
+        "type": "ROLE",
+        "permission": true
+      },
+      {
+        "name": "ManageRoles",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "setjoinrole",
+    "description": "Sets the default join role for new members.",
+    "options": [
+      {
+        "name": "role",
+        "type": 8,
+        "description": "The role to assign to new members",
+        "required": true
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageRoles",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "setlvlrole",
+    "description": "Sets a role to be assigned when a user reaches a specific level.",
+    "options": [
+      {
+        "name": "level",
+        "type": 4,
+        "description": "The level to associate with a role",
+        "required": true,
+        "minValue": 1
+      },
+      {
+        "name": "role",
+        "type": 8,
+        "description": "The role to assign at the specified level",
+        "required": true
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageRoles",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "setprefix",
+    "description": "Set a custom prefix for text commands",
+    "options": [
+      {
+        "name": "prefix",
+        "type": 3,
+        "description": "The new prefix to use",
+        "required": true
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageGuild",
+        "type": "ROLE",
+        "permission": true
+      }
+    ]
+  },
+  {
+    "name": "slap",
+    "description": "Slap another user or yourself for some reason!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to slap",
+        "required": false
+      }
+    ],
+    "requiredPermissions": []
+  }
+]
