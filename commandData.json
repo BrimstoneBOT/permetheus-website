@@ -15,8 +15,7 @@
     "examples": [
       "/afk",
       "/afk reason: Going to lunch"
-    ],
-    "detailedDescription": "Set your AFK (Away From Keyboard) status. This will notify others when they mention you.\n\nOptions:\n- reason (Optional): Specify why you're going AFK. If not provided, it will default to 'AFK'."
+    ]
   },
   {
     "name": "av",
@@ -34,8 +33,7 @@
     "examples": [
       "/av",
       "/av user: @JohnDoe"
-    ],
-    "detailedDescription": "Display the avatar of a user in high resolution.\n\nOptions:\n- user (Optional): The user whose avatar you want to see. If not specified, it shows your own avatar."
+    ]
   },
   {
     "name": "bridge",
@@ -52,8 +50,7 @@
     "category": "Community",
     "examples": [
       "/bridge profile_id: ABC123"
-    ],
-    "detailedDescription": "View the profile of another server using its unique profile ID.\n\nOptions:\n- profile_id (Required): The unique identifier of the server profile you want to display. This ID is typically set by server administrators."
+    ]
   },
   {
     "name": "clearlvlroles",
@@ -69,8 +66,7 @@
     "category": "Leveling",
     "examples": [
       "/clearlvlroles"
-    ],
-    "detailedDescription": "Remove all associations between levels and roles in the current server. This will not delete the roles themselves, only their connection to specific levels.\n\nRequires the 'Manage Server' permission."
+    ]
   },
   {
     "name": "deletejoinrole",
@@ -86,8 +82,7 @@
     "category": "Moderation",
     "examples": [
       "/deletejoinrole"
-    ],
-    "detailedDescription": "Remove the role that is automatically assigned to new members when they join the server.\n\nRequires the 'Manage Roles' permission."
+    ]
   },
   {
     "name": "displayserver",
@@ -137,8 +132,7 @@
       "/displayserver action: update field: description value: Welcome to our server!",
       "/displayserver action: remove field: banner_url",
       "/displayserver action: setid value: ABC123"
-    ],
-    "detailedDescription": "Manage and display server statistics.\n\nActions:\n- display: Show current server profile\n- update: Modify a field in the server profile\n- remove: Delete a field from the server profile\n- setid: Set a custom ID for the server profile (Premium feature)\n\nFields (for update/remove):\n- name: Server name\n- description: Server description\n- icon_url: URL of the server icon\n- banner_url: URL of the server banner\n- invite_url: Invite link for the server\n- member_count: Number of members (auto-updated)\n- online_count: Number of online members (auto-updated)\n- creation_date: Server creation date (auto-set)\n- owner: Server owner (auto-set)\n- custom_field1: User-defined field\n- custom_field2: User-defined field\n- custom_field3: User-defined field\n\nNote: Some fields are automatically managed and cannot be manually updated."
+    ]
   },
   {
     "name": "help",
@@ -148,8 +142,7 @@
     "category": "System",
     "examples": [
       "/help"
-    ],
-    "detailedDescription": "Display helpful information about the bot, including links to the command list, premium features, FAQ, and the bot's homepage."
+    ]
   },
   {
     "name": "hug",
@@ -167,8 +160,7 @@
     "examples": [
       "/hug",
       "/hug target: @JaneDoe"
-    ],
-    "detailedDescription": "Send a virtual hug to someone or to the entire server.\n\nOptions:\n- target (Optional): The user you want to hug. If not specified, you'll hug the entire server."
+    ]
   },
   {
     "name": "jail",
@@ -196,8 +188,7 @@
     "category": "Moderation",
     "examples": [
       "/jail user: @Troublemaker"
-    ],
-    "detailedDescription": "Jail or unjail a user. When jailed, the user loses all roles and is given a 'Jailed' role, restricting their access.\n\nOptions:\n- user (Required): The user to jail or unjail.\n\nRequires 'Manage Roles' and 'Move Members' permissions."
+    ]
   },
   {
     "name": "level",
@@ -215,8 +206,7 @@
     "examples": [
       "/level",
       "/level user: @JohnDoe"
-    ],
-    "detailedDescription": "Display the current level and XP progress of a user.\n\nOptions:\n- user (Optional): The user whose level you want to check. If not specified, it shows your own level."
+    ]
   },
   {
     "name": "lvlroles",
@@ -226,8 +216,7 @@
     "category": "Leveling",
     "examples": [
       "/lvlroles"
-    ],
-    "detailedDescription": "Show a list of all roles that are automatically assigned when users reach specific levels in the server."
+    ]
   },
   {
     "name": "purge",
@@ -259,8 +248,7 @@
     "examples": [
       "/purge amount: 50",
       "/purge amount: 100 users: @User1 @User2"
-    ],
-    "detailedDescription": "Delete a specified number of messages from the current channel.\n\nOptions:\n- amount (Required): The number of messages to delete (1-10000).\n- users (Optional): Mention specific users to delete messages only from them.\n\nRequires the 'Manage Messages' permission.\nNote: Messages older than 14 days cannot be bulk deleted."
+    ]
   },
   {
     "name": "removeprefix",
@@ -276,8 +264,7 @@
     "category": "System",
     "examples": [
       "/removeprefix"
-    ],
-    "detailedDescription": "Remove the custom prefix and revert to slash commands only. This will disable all text-based commands and require users to use slash commands exclusively.\n\nRequires the 'Manage Server' permission."
+    ]
   },
   {
     "name": "serverinfo",
@@ -287,8 +274,7 @@
     "category": "Community",
     "examples": [
       "/serverinfo"
-    ],
-    "detailedDescription": "Show detailed information about the current server, including member count, creation date, and other relevant statistics."
+    ]
   },
   {
     "name": "setjail",
@@ -325,8 +311,7 @@
       "/setjail channel: #jail-channel",
       "/setjail role: @Jailed",
       "/setjail channel: #jail-channel role: @Jailed"
-    ],
-    "detailedDescription": "Set up or modify the jail system for the server.\n\nOptions:\n- channel (Optional): The channel to use as the jail. If not specified, a new channel will be created.\n- role (Optional): The role to assign to jailed users. If not specified, a new role will be created.\n\nRequires 'Manage Channels' and 'Manage Roles' permissions."
+    ]
   },
   {
     "name": "setjoinrole",
@@ -349,8 +334,7 @@
     "category": "Moderation",
     "examples": [
       "/setjoinrole role: @NewMember"
-    ],
-    "detailedDescription": "Set a role to be automatically assigned to new members when they join the server.\n\nOptions:\n- role (Required): The role to assign to new members.\n\nRequires the 'Manage Roles' permission."
+    ]
   },
   {
     "name": "setlvlrole",
@@ -381,8 +365,7 @@
     "examples": [
       "/setlvlrole level: 10 role: @LevelTen",
       "/setlvlrole level: 5 role: @Novice"
-    ],
-    "detailedDescription": "Associate a role with a specific user level. The role will be automatically assigned when a user reaches that level.\n\nOptions:\n- level (Required): The level at which to assign the role (minimum 1).\n- role (Required): The role to assign at the specified level.\n\nRequires the 'Manage Roles' permission."
+    ]
   },
   {
     "name": "setprefix",
@@ -406,276 +389,6 @@
     "examples": [
       "/setprefix prefix: !",
       "/setprefix prefix: ?"
-    ],
-    "detailedDescription": "Set a custom prefix for text commands in the server.\n\nOptions:\n- prefix (Required): The new prefix to use for text commands. Must be 5 characters or less.\n\nRequires the 'Manage Server' permission."
-  },
-  {
-    "name": "kiss",
-    "description": "Give someone a kiss!",
-    "options": [
-      {
-        "name": "target",
-        "type": 6,
-        "description": "The user you want to kiss",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [],
-    "category": "Fun",
-    "examples": [
-      "/kiss",
-      "/kiss target: @JaneDoe"
-    ],
-    "detailedDescription": "Send a virtual kiss to someone or to the entire server.\n\nOptions:\n- target (Optional): The user you want to kiss. If not specified, you'll kiss the entire server."
-  },
-  {
-    "name": "jail",
-    "description": "Jails or unjails a user.",
-    "options": [
-      {
-        "name": "user",
-        "type": 6,
-        "description": "The user to jail or unjail",
-        "required": true
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageRoles",
-        "type": "ROLE",
-        "permission": true
-      },
-      {
-        "name": "MoveMembers",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "Moderation",
-    "examples": [
-      "/jail user: @Troublemaker"
-    ],
-    "detailedDescription": "Jail or unjail a user. When jailed, the user loses all roles and is given a 'Jailed' role, restricting their access. When unjailed, their previous roles are restored.\n\nOptions:\n- user (Required): The user to jail or unjail.\n\nNote: Requires 'Manage Roles' and 'Move Members' permissions. The jail channel and role must be set up using the /setjail command first."
-  },
-  {
-    "name": "level",
-    "description": "Check a user's level and XP progress.",
-    "options": [
-      {
-        "name": "user",
-        "type": 6,
-        "description": "The user to check the level for (optional).",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [],
-    "category": "Leveling",
-    "examples": [
-      "/level",
-      "/level user: @JohnDoe"
-    ],
-    "detailedDescription": "Display the level and XP progress of a user.\n\nOptions:\n- user (Optional): The user to check the level for. If not specified, it shows your own level.\n\nThe command shows the current level, XP progress, and a visual progress bar towards the next level."
-  },
-  {
-    "name": "leaderboard",
-    "description": "Displays The Top 10 Highest-Level Users in this server.",
-    "options": [],
-    "requiredPermissions": [],
-    "category": "Leveling",
-    "examples": [
-      "/leaderboard"
-    ],
-    "detailedDescription": "Show the top 10 users with the highest levels in the server. The leaderboard displays each user's rank, mention, and current level."
-  },
-  {
-    "name": "lvlroles",
-    "description": "Displays all roles and their associated levels within the server.",
-    "options": [],
-    "requiredPermissions": [],
-    "category": "Leveling",
-    "examples": [
-      "/lvlroles"
-    ],
-    "detailedDescription": "Show all roles that are automatically assigned when users reach specific levels. This command displays a list of levels and their corresponding roles, including role IDs for reference."
-  },
-  {
-    "name": "purge",
-    "description": "Deletes a specified number of messages from the current channel, optionally from specific users.",
-    "options": [
-      {
-        "name": "amount",
-        "type": 4,
-        "description": "The number of messages to delete (up to 10000).",
-        "required": true,
-        "minValue": 1,
-        "maxValue": 10000
-      },
-      {
-        "name": "users",
-        "type": 3,
-        "description": "Mention users to delete messages from (optional).",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageMessages",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "Moderation",
-    "examples": [
-      "/purge amount: 50",
-      "/purge amount: 100 users: @User1 @User2"
-    ],
-    "detailedDescription": "Delete a specified number of messages from the current channel.\n\nOptions:\n- amount (Required): The number of messages to delete (1-10000).\n- users (Optional): Mention specific users to delete messages only from them.\n\nRequires the 'Manage Messages' permission.\nNote: Messages older than 14 days cannot be bulk deleted due to Discord limitations."
-  },
-  {
-    "name": "removeprefix",
-    "description": "Remove the custom prefix and revert to slash commands only.",
-    "options": [],
-    "requiredPermissions": [
-      {
-        "name": "ManageGuild",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "System",
-    "examples": [
-      "/removeprefix"
-    ],
-    "detailedDescription": "Remove the custom text command prefix for the server, reverting to slash commands only. This will disable all text-based commands and require users to use slash commands exclusively.\n\nRequires the 'Manage Server' permission."
-  },
-  {
-    "name": "serverinfo",
-    "description": "Displays info about the current server.",
-    "options": [],
-    "requiredPermissions": [],
-    "category": "Community",
-    "examples": [
-      "/serverinfo"
-    ],
-    "detailedDescription": "Show detailed information about the current server, including:\n- Server name and ID\n- Owner\n- Creation date\n- Member count (total and online)\n- Channel count\n- Role count\n- Server boost level\n- Custom server information (if set up using /displayserver)"
-  },
-  {
-    "name": "setjail",
-    "description": "Sets or creates the jail channel and role.",
-    "options": [
-      {
-        "name": "channel",
-        "type": 7,
-        "description": "The jail channel (optional)",
-        "required": false
-      },
-      {
-        "name": "role",
-        "type": 8,
-        "description": "The jail role (optional)",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageChannels",
-        "type": "ROLE",
-        "permission": true
-      },
-      {
-        "name": "ManageRoles",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "Moderation",
-    "examples": [
-      "/setjail",
-      "/setjail channel: #jail-channel",
-      "/setjail role: @Jailed",
-      "/setjail channel: #jail-channel role: @Jailed"
-    ],
-    "detailedDescription": "Set up or modify the jail system for the server.\n\nOptions:\n- channel (Optional): The channel to use as the jail. If not specified, a new channel will be created.\n- role (Optional): The role to assign to jailed users. If not specified, a new role will be created.\n\nIf no options are provided, the command will create both a new channel and role.\nRequires 'Manage Channels' and 'Manage Roles' permissions."
-  },
-  {
-    "name": "setjoinrole",
-    "description": "Sets the default join role for new members.",
-    "options": [
-      {
-        "name": "role",
-        "type": 8,
-        "description": "The role to assign to new members",
-        "required": true
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageRoles",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "Moderation",
-    "examples": [
-      "/setjoinrole role: @NewMember"
-    ],
-    "detailedDescription": "Set a role to be automatically assigned to new members when they join the server.\n\nOptions:\n- role (Required): The role to assign to new members.\n\nRequires the 'Manage Roles' permission.\nNote: Ensure the bot has a role higher than the assigned role in the role hierarchy."
-  },
-  {
-    "name": "setlvlrole",
-    "description": "Sets a role to be assigned when a user reaches a specific level.",
-    "options": [
-      {
-        "name": "level",
-        "type": 4,
-        "description": "The level to associate with a role",
-        "required": true,
-        "minValue": 1
-      },
-      {
-        "name": "role",
-        "type": 8,
-        "description": "The role to assign at the specified level",
-        "required": true
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageRoles",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "Leveling",
-    "examples": [
-      "/setlvlrole level: 10 role: @LevelTen",
-      "/setlvlrole level: 5 role: @Novice"
-    ],
-    "detailedDescription": "Associate a role with a specific user level. The role will be automatically assigned when a user reaches that level.\n\nOptions:\n- level (Required): The level at which to assign the role (minimum 1).\n- role (Required): The role to assign at the specified level.\n\nRequires the 'Manage Roles' permission.\nNote: Ensure the bot has a role higher than the assigned role in the role hierarchy."
-  },
-  {
-    "name": "setprefix",
-    "description": "Set a custom prefix for text commands",
-    "options": [
-      {
-        "name": "prefix",
-        "type": 3,
-        "description": "The new prefix to use",
-        "required": true
-      }
-    ],
-    "requiredPermissions": [
-      {
-        "name": "ManageGuild",
-        "type": "ROLE",
-        "permission": true
-      }
-    ],
-    "category": "System",
-    "examples": [
-      "/setprefix prefix: !",
-      "/setprefix prefix: ?"
-    ],
-    "detailedDescription": "Set a custom prefix for text commands in the server.\n\nOptions:\n- prefix (Required): The new prefix to use for text commands. Must be 5 characters or less.\n\nRequires the 'Manage Server' permission.\nNote: This enables text-based commands alongside slash commands."
+    ]
   }
 ]
