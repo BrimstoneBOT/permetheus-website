@@ -36,7 +36,7 @@
             margin: 0;
             padding: 0;
             background-color: #1c2a3b;
-            background-image: url("assets/backgroundone.png");
+            background-image: url("../assets/backgroundone.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -284,14 +284,14 @@
 <body>
 
 <div class="logo">
-    <img src="assets/logo.png" alt="Permetheus Logo">
+    <img src="../assets/logo.png" alt="Permetheus Logo">
 </div>
 
 <div class="content">
     <div id="navbar">
-        <a href="https://permetheus.com/" class="navbar-link">home</a>
-        <a href="https://permetheus.com/" class="navbar-link">premium</a>
-        <a href="https://permetheus.com/" class="navbar-link">faq</a>
+        <a href="../" class="navbar-link">home</a>
+        <a href="../" class="navbar-link">premium</a>
+        <a href="../" class="navbar-link">faq</a>
     </div>
 
     <div class="category-tabs">
@@ -331,7 +331,7 @@
             document.querySelector('.content').classList.add('fade-in');
         }, 800);
 
-        const jsonUrl = 'commandData.json';
+        const jsonUrl = '../commandData.json';
 
         fetch(jsonUrl)
             .then(response => response.json())
