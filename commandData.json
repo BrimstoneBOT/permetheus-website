@@ -12,7 +12,10 @@
     ],
     "requiredPermissions": [],
     "category": "Fun",
-    "example": "/afk reason:Going to lunch"
+    "examples": [
+      "/afk",
+      "/afk reason: Going to lunch"
+    ]
   },
   {
     "name": "av",
@@ -27,7 +30,10 @@
     ],
     "requiredPermissions": [],
     "category": "Community",
-    "example": "/av user:@JohnDoe"
+    "examples": [
+      "/av",
+      "/av user: @JohnDoe"
+    ]
   },
   {
     "name": "bridge",
@@ -42,7 +48,9 @@
     ],
     "requiredPermissions": [],
     "category": "Community",
-    "example": "/bridge profile_id:ABC123"
+    "examples": [
+      "/bridge profile_id: ABC123"
+    ]
   },
   {
     "name": "clearlvlroles",
@@ -56,7 +64,9 @@
       }
     ],
     "category": "Leveling",
-    "example": "/clearlvlroles"
+    "examples": [
+      "/clearlvlroles"
+    ]
   },
   {
     "name": "deletejoinrole",
@@ -70,7 +80,9 @@
       }
     ],
     "category": "Moderation",
-    "example": "/deletejoinrole"
+    "examples": [
+      "/deletejoinrole"
+    ]
   },
   {
     "name": "displayserver",
@@ -115,7 +127,12 @@
     ],
     "requiredPermissions": [],
     "category": "System",
-    "example": "/displayserver action:update field:description value:Welcome to our server!"
+    "examples": [
+      "/displayserver action: display",
+      "/displayserver action: update field: description value: Welcome to our server!",
+      "/displayserver action: remove field: banner_url",
+      "/displayserver action: setid value: ABC123"
+    ]
   },
   {
     "name": "help",
@@ -123,7 +140,9 @@
     "options": [],
     "requiredPermissions": [],
     "category": "System",
-    "example": "/help"
+    "examples": [
+      "/help"
+    ]
   },
   {
     "name": "hug",
@@ -138,7 +157,10 @@
     ],
     "requiredPermissions": [],
     "category": "Fun",
-    "example": "/hug target:@JaneDoe"
+    "examples": [
+      "/hug",
+      "/hug target: @JaneDoe"
+    ]
   },
   {
     "name": "jail",
@@ -156,48 +178,17 @@
         "name": "ManageRoles",
         "type": "ROLE",
         "permission": true
+      },
+      {
+        "name": "MoveMembers",
+        "type": "ROLE",
+        "permission": true
       }
     ],
     "category": "Moderation",
-    "example": "/jail user:@TroubleMaker"
-  },
-  {
-    "name": "kill",
-    "description": "Unalive someone!",
-    "options": [
-      {
-        "name": "target",
-        "type": 6,
-        "description": "The user you want to unalive",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [],
-    "category": "Fun",
-    "example": "/kill target:@Villain"
-  },
-  {
-    "name": "kiss",
-    "description": "Give someone a kiss!",
-    "options": [
-      {
-        "name": "target",
-        "type": 6,
-        "description": "The user you want to kiss",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [],
-    "category": "Fun",
-    "example": "/kiss target:@Sweetheart"
-  },
-  {
-    "name": "leaderboard",
-    "description": "Displays The Top 10 Highest-Level Users in this server.",
-    "options": [],
-    "requiredPermissions": [],
-    "category": "Leveling",
-    "example": "/leaderboard"
+    "examples": [
+      "/jail user: @Troublemaker"
+    ]
   },
   {
     "name": "level",
@@ -212,22 +203,10 @@
     ],
     "requiredPermissions": [],
     "category": "Leveling",
-    "example": "/level user:@ActiveUser"
-  },
-  {
-    "name": "lewd",
-    "description": "Hold hands with someone! OwO",
-    "options": [
-      {
-        "name": "target",
-        "type": 6,
-        "description": "The user you want to hold hands with.",
-        "required": false
-      }
-    ],
-    "requiredPermissions": [],
-    "category": "Fun",
-    "example": "/lewd target:@Crush"
+    "examples": [
+      "/level",
+      "/level user: @JohnDoe"
+    ]
   },
   {
     "name": "lvlroles",
@@ -235,7 +214,9 @@
     "options": [],
     "requiredPermissions": [],
     "category": "Leveling",
-    "example": "/lvlroles"
+    "examples": [
+      "/lvlroles"
+    ]
   },
   {
     "name": "purge",
@@ -264,7 +245,10 @@
       }
     ],
     "category": "Moderation",
-    "example": "/purge amount:50 users:@User1 @User2"
+    "examples": [
+      "/purge amount: 50",
+      "/purge amount: 100 users: @User1 @User2"
+    ]
   },
   {
     "name": "removeprefix",
@@ -278,7 +262,9 @@
       }
     ],
     "category": "System",
-    "example": "/removeprefix"
+    "examples": [
+      "/removeprefix"
+    ]
   },
   {
     "name": "serverinfo",
@@ -286,7 +272,9 @@
     "options": [],
     "requiredPermissions": [],
     "category": "Community",
-    "example": "/serverinfo"
+    "examples": [
+      "/serverinfo"
+    ]
   },
   {
     "name": "setjail",
@@ -318,7 +306,12 @@
       }
     ],
     "category": "Moderation",
-    "example": "/setjail channel:#jail-channel role:@Jailed"
+    "examples": [
+      "/setjail",
+      "/setjail channel: #jail-channel",
+      "/setjail role: @Jailed",
+      "/setjail channel: #jail-channel role: @Jailed"
+    ]
   },
   {
     "name": "setjoinrole",
@@ -339,7 +332,9 @@
       }
     ],
     "category": "Moderation",
-    "example": "/setjoinrole role:@NewMember"
+    "examples": [
+      "/setjoinrole role: @NewMember"
+    ]
   },
   {
     "name": "setlvlrole",
@@ -367,6 +362,33 @@
       }
     ],
     "category": "Leveling",
-    "example": "/setlvlrole level:10 role:@LevelTen"
+    "examples": [
+      "/setlvlrole level: 10 role: @LevelTen",
+      "/setlvlrole level: 5 role: @Novice"
+    ]
+  },
+  {
+    "name": "setprefix",
+    "description": "Set a custom prefix for text commands",
+    "options": [
+      {
+        "name": "prefix",
+        "type": 3,
+        "description": "The new prefix to use",
+        "required": true
+      }
+    ],
+    "requiredPermissions": [
+      {
+        "name": "ManageGuild",
+        "type": "ROLE",
+        "permission": true
+      }
+    ],
+    "category": "System",
+    "examples": [
+      "/setprefix prefix: !",
+      "/setprefix prefix: ?"
+    ]
   }
 ]
