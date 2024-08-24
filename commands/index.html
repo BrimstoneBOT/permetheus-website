@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Commands</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
@@ -252,32 +252,75 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .logo img {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            #navbar {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .navbar-link {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+
+            .category-tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+
             .category-tab {
+                width: 80%;
+                max-width: 250px;
                 font-size: 16px;
                 padding: 10px 20px;
             }
 
-            .command-name {
-                font-size: 16px;
-            }
-
             .command-list {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
             }
 
             .command-card {
                 height: 50px;
             }
 
+            .command-name {
+                font-size: 14px;
+            }
+
             .modal-content {
                 width: 95%;
-                max-width: none;
-                margin: 10px;
-                padding: 20px;
+                padding: 15px;
             }
 
             .modal-title {
-                font-size: 20px;
+                font-size: 18px;
+            }
+
+            .modal-section-title {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 90%;
+            }
+
+            .category-tab, .command-card {
+                width: 90%;
+            }
+
+            .command-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -291,8 +334,8 @@
 <div class="content">
     <div id="navbar">
         <a href="../" class="navbar-link">home</a>
-        <a href="../" class="navbar-link">premium</a>
-        <a href="../" class="navbar-link">faq</a>
+        <a href="../premium" class="navbar-link">premium</a>
+        <a href="../faq" class="navbar-link">faq</a>
     </div>
 
     <div class="category-tabs">
@@ -418,10 +461,10 @@
 
     function adjustCommandListHeight(visibleCards) {
         const commandList = document.querySelector('.command-list');
-        const cardHeight = 75; // Assuming 75px height per card
-        const cardsPerRow = Math.floor(commandList.offsetWidth / 215); // 200px card width + 15px gap
+        const cardHeight = 60; // Reduced height for mobile
+        const cardsPerRow = window.innerWidth > 768 ? Math.floor(commandList.offsetWidth / 215) : 1;
         const rows = Math.ceil(visibleCards / cardsPerRow);
-        const minHeight = Math.max(400, rows * cardHeight);
+        const minHeight = Math.max(300, rows * cardHeight);
         commandList.style.minHeight = `${minHeight}px`;
     }
 
