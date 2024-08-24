@@ -104,18 +104,32 @@
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .pill {
-      font-size: 16px;
-      padding: 10px 20px;
-      width: 160px; /* Adjust width for smaller screens */
+    .logo img {
+      width: 80%; /* Adjust logo size relative to screen width */
+      max-width: 400px;
     }
 
     .pill-container {
-      gap: 15px; /* Adjust gap for smaller screens */
+      flex-direction: column;
+      gap: 15px;
     }
 
+    .pill {
+      font-size: 18px;
+      padding: 12px 25px;
+      width: 80%; /* Make pills wider on mobile */
+      max-width: 250px;
+    }
+  }
+
+  @media (max-width: 480px) {
     .logo img {
-      width: 400px; /* Adjust logo size for smaller screens */
+      width: 90%; /* Further adjust for smaller screens */
+    }
+
+    .pill {
+      font-size: 16px;
+      padding: 10px 20px;
     }
   }
 </style>
