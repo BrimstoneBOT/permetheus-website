@@ -390,5 +390,87 @@
       "/setprefix prefix: !",
       "/setprefix prefix: ?"
     ]
+  },
+  {
+    "name": "leaderboard",
+    "description": "Displays The Top 10 Highest-Level Users in this server.",
+    "options": [],
+    "requiredPermissions": [],
+    "category": "Leveling",
+    "examples": [
+      "/leaderboard"
+    ]
+  },
+  {
+    "name": "lewd",
+    "description": "Hold hands with someone! OwO",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to hold hands with..",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [],
+    "category": "Fun",
+    "examples": [
+      "/lewd",
+      "/lewd target: @JaneDoe"
+    ]
+  },
+  {
+    "name": "kiss",
+    "description": "Give someone a kiss!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to kiss",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [],
+    "category": "Fun",
+    "examples": [
+      "/kiss",
+      "/kiss target: @JohnDoe"
+    ]
+  },
+  {
+    "name": "slap",
+    "description": "Slap another user or yourself for some reason!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to slap",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [],
+    "category": "Fun",
+    "examples": [
+      "/slap",
+      "/slap target: @JaneDoe"
+    ]
+  },
+  {
+    "name": "kill",
+    "description": "Unalive someone!",
+    "options": [
+      {
+        "name": "target",
+        "type": 6,
+        "description": "The user you want to unalive",
+        "required": false
+      }
+    ],
+    "requiredPermissions": [],
+    "category": "Fun",
+    "examples": [
+      "/kill",
+      "/kill target: @JohnDoe"
+    ]
   }
 ]
