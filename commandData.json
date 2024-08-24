@@ -10,7 +10,8 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/afk reason:Going to lunch"
   },
   {
     "name": "av",
@@ -23,7 +24,8 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/av user:@JohnDoe"
   },
   {
     "name": "bridge",
@@ -36,7 +38,8 @@
         "required": true
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/bridge profile_id:ABC123"
   },
   {
     "name": "clearlvlroles",
@@ -48,7 +51,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/clearlvlroles"
   },
   {
     "name": "deletejoinrole",
@@ -60,7 +64,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/deletejoinrole"
   },
   {
     "name": "displayserver",
@@ -103,13 +108,15 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/displayserver action:update field:description value:Welcome to our server!"
   },
   {
     "name": "help",
     "description": "Get help and information about the bot.",
     "options": [],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/help"
   },
   {
     "name": "hug",
@@ -122,7 +129,8 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/hug target:@JaneDoe"
   },
   {
     "name": "jail",
@@ -141,7 +149,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/jail user:@TroubleMaker"
   },
   {
     "name": "kill",
@@ -154,7 +163,8 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/kill target:@Villain"
   },
   {
     "name": "kiss",
@@ -167,13 +177,15 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/kiss target:@Sweetheart"
   },
   {
     "name": "leaderboard",
     "description": "Displays The Top 10 Highest-Level Users in this server.",
     "options": [],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/leaderboard"
   },
   {
     "name": "level",
@@ -186,7 +198,8 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/level user:@ActiveUser"
   },
   {
     "name": "lewd",
@@ -199,13 +212,15 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/lewd target:@Crush"
   },
   {
     "name": "lvlroles",
     "description": "Displays all roles and their associated levels within the server.",
     "options": [],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/lvlroles"
   },
   {
     "name": "purge",
@@ -232,7 +247,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/purge amount:50 users:@User1 @User2"
   },
   {
     "name": "removeprefix",
@@ -244,13 +260,15 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/removeprefix"
   },
   {
     "name": "serverinfo",
     "description": "Displays info about the current server.",
     "options": [],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/serverinfo"
   },
   {
     "name": "setjail",
@@ -280,7 +298,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/setjail channel:#jail-channel role:@Jailed"
   },
   {
     "name": "setjoinrole",
@@ -299,7 +318,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/setjoinrole role:@NewMember"
   },
   {
     "name": "setlvlrole",
@@ -325,7 +345,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/setlvlrole level:10 role:@LevelTen"
   },
   {
     "name": "setprefix",
@@ -344,7 +365,8 @@
         "type": "ROLE",
         "permission": true
       }
-    ]
+    ],
+    "example": "/setprefix prefix:!"
   },
   {
     "name": "slap",
@@ -357,6 +379,7 @@
         "required": false
       }
     ],
-    "requiredPermissions": []
+    "requiredPermissions": [],
+    "example": "/slap target:@Mischievous"
   }
 ]
