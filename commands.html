@@ -36,7 +36,7 @@
             margin: 0;
             padding: 0;
             background-color: #1c2a3b;
-            background-image: url("https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/7847a600-e807-4326-94fa-4e2eb269c943/permetheusbackground1.png?content-type=image%2Fpng");
+            background-image: url("assets/backgroundone.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -100,8 +100,12 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px 0 40px; /* Increased bottom margin */
+            margin: 20px 0 40px;
             gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 20px 0;
         }
 
         .category-tab {
@@ -131,6 +135,7 @@
             max-width: 1200px;
             padding: 0 20px;
             margin-bottom: 40px;
+            min-height: 40px;
         }
 
         .command-card {
@@ -138,7 +143,7 @@
             border-radius: 10px;
             border: 2px solid #ffffff;
             color: #ffffff;
-            transition: all 0.3s;
+            transition: all 0.3s, opacity 0.3s;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -147,10 +152,13 @@
             cursor: pointer;
         }
 
-        .command-card:hover {
+        .command-card:hover,
+        .command-card.active {
             background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #f1da93;
+            color: #f1da93;
         }
 
         .command-name {
@@ -161,6 +169,8 @@
 
         .modal {
             display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -168,14 +178,12 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0,0,0,0.7);
-            animation: fadeIn 0.3s;
             justify-content: center;
             align-items: center;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .modal.show {
+            opacity: 1;
         }
 
         .modal-content {
@@ -184,17 +192,18 @@
             border: 2px solid #f1da93;
             border-radius: 15px;
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
+            min-width: 300px;
             color: #ffffff;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s;
+            transform: translateY(-30px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
             max-height: 80vh;
             overflow-y: auto;
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .modal.show .modal-content {
+            transform: translateY(0);
         }
 
         .close {
@@ -261,7 +270,8 @@
 
             .modal-content {
                 width: 95%;
-                margin: 10% auto;
+                max-width: none;
+                margin: 10px;
                 padding: 20px;
             }
 
@@ -274,7 +284,7 @@
 <body>
 
 <div class="logo">
-    <img src="https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/4c3a1427-ef4e-418d-9cc4-8bc97ba16b52/permetheuslogorenderclose.png?content-type=image%2Fpng" alt="Permetheus Logo">
+    <img src="assets/logo.png" alt="Permetheus Logo">
 </div>
 
 <div class="content">
@@ -321,7 +331,7 @@
             document.querySelector('.content').classList.add('fade-in');
         }, 800);
 
-        const jsonUrl = 'https://permetheus.com/commandData.json';
+        const jsonUrl = 'commandData.json';
 
         fetch(jsonUrl)
             .then(response => response.json())
@@ -351,6 +361,7 @@
     function setupTabs() {
         const categoryTabs = document.querySelectorAll('.category-tab');
         const commandCards = document.querySelectorAll('.command-card');
+        const commandList = document.querySelector('.command-list');
 
         categoryTabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -359,14 +370,31 @@
                 categoryTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
 
+                // Fade out all cards
                 commandCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    if (category === 'All' || cardCategory === category) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.opacity = '0';
                 });
+
+                // Wait for fade out to complete
+                setTimeout(() => {
+                    let visibleCards = 0;
+                    commandCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (category === 'All' || cardCategory === category) {
+                            card.style.display = 'flex';
+                            visibleCards++;
+                            // Fade in visible cards
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Adjust the min-height of the command list based on visible cards
+                    adjustCommandListHeight(visibleCards);
+                }, 300); // Wait for 300ms (fade out duration)
             });
         });
 
@@ -375,9 +403,25 @@
 
     function showAllCommands() {
         const commandCards = document.querySelectorAll('.command-card');
+        let visibleCards = 0;
         commandCards.forEach(card => {
             card.style.display = 'flex';
+            card.style.opacity = '0';
+            visibleCards++;
+            setTimeout(() => {
+                card.style.opacity = '1';
+            }, 50);
         });
+        adjustCommandListHeight(visibleCards);
+    }
+
+    function adjustCommandListHeight(visibleCards) {
+        const commandList = document.querySelector('.command-list');
+        const cardHeight = 75; // Assuming 75px height per card
+        const cardsPerRow = Math.floor(commandList.offsetWidth / 215); // 200px card width + 15px gap
+        const rows = Math.ceil(visibleCards / cardsPerRow);
+        const minHeight = Math.max(400, rows * cardHeight);
+        commandList.style.minHeight = `${minHeight}px`;
     }
 
     function showCommandDetails(command) {
@@ -391,6 +435,14 @@
                 console.error('Modal elements not found');
                 return;
             }
+
+            // Remove active class from all command cards
+            document.querySelectorAll('.command-card').forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Add active class to the clicked command card
+            event.currentTarget.classList.add('active');
 
             modalBody.innerHTML = `
                 <div class="modal-title">${command.name}</div>
@@ -427,13 +479,24 @@
             `;
 
             modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
         } catch (error) {
             console.error('Error in showCommandDetails:', error);
         }
     }
 
     function closeModal() {
-        document.getElementById('commandModal').style.display = 'none';
+        const modal = document.getElementById('commandModal');
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            // Remove active class from all command cards when modal is closed
+            document.querySelectorAll('.command-card').forEach(card => {
+                card.classList.remove('active');
+            });
+        }, 300);
     }
 
     document.querySelector('.close').addEventListener('click', closeModal);
