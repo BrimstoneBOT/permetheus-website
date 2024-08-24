@@ -14,6 +14,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -22,20 +23,38 @@
         }
 
         #navbar {
-            text-align: center;
-            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
         .navbar-logo {
-            height: 80px;
+            height: 50px;
             vertical-align: middle;
         }
 
-        .navbar-text {
-            vertical-align: middle;
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-link {
+            text-decoration: none;
             color: #f1da93;
-            font-size: 28px;
-            margin-left: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
         }
 
         .category-tabs {
@@ -133,7 +152,11 @@
     <a href="https://permetheus.com">
         <img src="https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/4c3a1427-ef4e-418d-9cc4-8bc97ba16b52/permetheuslogorenderclose.png?content-type=image%2Fpng" alt="Permetheus Logo" class="navbar-logo">
     </a>
-    <span class="navbar-text">commands</span>
+    <div class="navbar-links">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="premium.html" class="navbar-link">Premium</a>
+        <a href="faq.html" class="navbar-link">FAQ</a>
+    </div>
 </div>
 
 <div class="category-tabs">
