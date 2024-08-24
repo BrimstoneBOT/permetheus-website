@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Commands</title>
+    <title>commands</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     <style>
@@ -19,10 +19,7 @@
             opacity: 0;
             transition: opacity 1s ease;
         }
-        .logo.fade-in {
-            opacity: 1;
-        }
-        .content.fade-in {
+        .logo.fade-in, .content.fade-in {
             opacity: 1;
         }
         /* Rest of your styles */
@@ -356,6 +353,15 @@
 </div>
 
 <script>
+    // Fade in effect
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+        setTimeout(() => {
+            document.querySelector('.logo').classList.add('fade-in');
+            document.querySelector('.content').classList.add('fade-in');
+        }, 100);
+    });
+
     // Your existing JavaScript code here
     // ...
 </script>
