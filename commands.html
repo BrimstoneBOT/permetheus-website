@@ -6,83 +6,117 @@
     <title>Commands</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* Critical CSS */
+        body {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .logo, .content {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .logo.fade-in {
+            opacity: 1;
+        }
+        .content.fade-in {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        // Prevent Flash of Unstyled Content (FOUC)
+        document.documentElement.classList.add('no-fouc');
+    </script>
+    <style>
+        /* Rest of your styles */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #1c2a3b;
             background-image: url("https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/7847a600-e807-4326-94fa-4e2eb269c943/permetheusbackground1.png?content-type=image%2Fpng");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #ffffff;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
+            backdrop-filter: blur(5px);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .logo {
+            margin: 20px 0 40px; /* Increased bottom margin */
+            animation: fadeInLogo 1.5s ease-in-out forwards;
+        }
+
+        .logo img {
+            width: 400px;
+            height: auto;
+        }
+
+        @keyframes fadeInLogo {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         #navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar-logo {
-            height: 50px;
-            vertical-align: middle;
-        }
-
-        .navbar-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             display: flex;
             gap: 20px;
+            background-color: transparent;
+            box-shadow: none;
         }
 
         .navbar-link {
             text-decoration: none;
-            color: #f1da93;
+            color: #ffffff;
             font-size: 18px;
             font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 10px;
+            padding: 8px 16px;
+            border-radius: 20px;
             transition: background-color 0.3s, color 0.3s;
+            text-transform: lowercase; /* Added to make navbar text lowercase */
         }
 
         .navbar-link:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
+            color: #f1da93;
         }
 
         .category-tabs {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
-            margin-bottom: 30px;
+            margin: 20px 0 40px; /* Increased bottom margin */
+            gap: 20px;
         }
 
         .category-tab {
-            background-color: rgba(28, 42, 59, 0.8);
-            border: 2px solid transparent;
+            background-color: transparent;
             color: #ffffff;
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 14px;
+            padding: 15px 30px;
+            font-size: 18px;
             font-weight: bold;
-            border-radius: 20px;
+            border-radius: 30px;
+            border: 3px solid #ffffff;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s, color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s, border-color 0.3s;
         }
 
-        .category-tab:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-        }
-
+        .category-tab:hover,
         .category-tab.active {
             background-color: rgba(255, 255, 255, 0.15);
             color: #f1da93;
@@ -91,123 +125,225 @@
 
         .command-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller minimum size */
-            gap: 15px; /* Smaller gap */
-            width: 100%; /* Use full width */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1200px;
             padding: 0 20px;
+            margin-bottom: 40px;
         }
 
         .command-card {
-            background-color: rgba(28, 42, 59, 0.7);
-            padding: 15px;
-            border-radius: 15px;
-            border: 1px solid #ffffff;
+            background-color: rgba(28, 42, 59, 0.8);
+            border-radius: 10px;
+            border: 2px solid #ffffff;
             color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 180px; /* Smaller minimum height */
+            transition: all 0.3s;
             overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            cursor: pointer;
         }
 
         .command-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
-            border-color: #f1da93;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .command-name {
-            font-size: 16px; /* Smaller font size */
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            text-align: center;
         }
 
-        .command-description {
-            margin-bottom: 10px;
-            flex-grow: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
-            line-clamp: 3;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+            justify-content: center;
+            align-items: center;
         }
 
-        .command-permissions {
-            font-style: italic;
-            color: #cccccc;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        footer {
-            display: none !important;
+        .modal-content {
+            background-color: rgba(28, 42, 59, 0.95);
+            padding: 25px;
+            border: 2px solid #f1da93;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close {
+            color: #f1da93;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #ffffff;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #f1da93;
+            text-align: center;
+            border-bottom: 1px solid #f1da93;
+            padding-bottom: 10px;
+        }
+
+        .modal-section {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .modal-section-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #f1da93;
+        }
+
+        .modal ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .modal li {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .category-tab {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .command-name {
+                font-size: 16px;
+            }
+
+            .command-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .command-card {
+                height: 50px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div id="navbar">
-    <a href="https://permetheus.com">
-        <img src="https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/4c3a1427-ef4e-418d-9cc4-8bc97ba16b52/permetheuslogorenderclose.png?content-type=image%2Fpng" alt="Permetheus Logo" class="navbar-logo">
-    </a>
-    <div class="navbar-links">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="premium.html" class="navbar-link">Premium</a>
-        <a href="faq.html" class="navbar-link">FAQ</a>
+<div class="logo">
+    <img src="https://images.squarespace-cdn.com/content/65c861c2531c37750522b816/4c3a1427-ef4e-418d-9cc4-8bc97ba16b52/permetheuslogorenderclose.png?content-type=image%2Fpng" alt="Permetheus Logo">
+</div>
+
+<div class="content">
+    <div id="navbar">
+        <a href="https://permetheus.com/" class="navbar-link">home</a>
+        <a href="https://permetheus.com/" class="navbar-link">premium</a>
+        <a href="https://permetheus.com/" class="navbar-link">faq</a>
     </div>
-</div>
 
-<div class="category-tabs">
-    <button class="category-tab active" data-category="All">All</button>
-    <button class="category-tab" data-category="Fun">Fun</button>
-    <button class="category-tab" data-category="System">System</button>
-    <button class="category-tab" data-category="Community">Community</button>
-    <button class="category-tab" data-category="Leveling">Leveling</button>
-    <button class="category-tab" data-category="Moderation">Moderation</button>
-</div>
+    <div class="category-tabs">
+        <button class="category-tab active" data-category="All">All</button>
+        <button class="category-tab" data-category="Fun">Fun</button>
+        <button class="category-tab" data-category="System">System</button>
+        <button class="category-tab" data-category="Community">Community</button>
+        <button class="category-tab" data-category="Leveling">Leveling</button>
+        <button class="category-tab" data-category="Moderation">Moderation</button>
+    </div>
 
-<div class="command-list">
-    <!-- Command Cards Will Be Inserted Here -->
+    <div class="command-list">
+        <!-- Command Cards Will Be Inserted Here -->
+    </div>
+
+    <div id="commandModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const jsonUrl = 'https://brimstonebot.github.io/command-data/commandData.json'; // Ensure this URL is correct and accessible
+        // Remove no-fouc class and add loaded class to body
+        document.documentElement.classList.remove('no-fouc');
+        document.body.classList.add('loaded');
+
+        // Fade in logo
+        setTimeout(() => {
+            document.querySelector('.logo').classList.add('fade-in');
+        }, 300);
+
+        // Fade in content
+        setTimeout(() => {
+            document.querySelector('.content').classList.add('fade-in');
+        }, 800);
+
+        const jsonUrl = 'https://permetheus.com/commandData.json';
 
         fetch(jsonUrl)
             .then(response => response.json())
             .then(data => {
                 const commandList = document.querySelector('.command-list');
-                commandList.innerHTML = ''; // Clear existing content
+                commandList.innerHTML = '';
 
                 data.forEach(command => {
                     const card = document.createElement('div');
                     card.className = 'command-card';
-                    const category = command.category || 'Miscellaneous';
-                    card.setAttribute('data-category', category);
+                    card.setAttribute('data-category', command.category || 'Miscellaneous');
 
-                    const commandName = document.createElement('div');
-                    commandName.className = 'command-name';
-                    commandName.textContent = `/${command.name}`;
+                    card.innerHTML = `
+                        <div class="command-name">${command.name}</div>
+                    `;
 
-                    const commandDescription = document.createElement('div');
-                    commandDescription.className = 'command-description';
-                    commandDescription.textContent = command.description;
-
-                    const commandPermissions = document.createElement('div');
-                    commandPermissions.className = 'command-permissions';
-                    commandPermissions.textContent = `Permissions: ${command.requiredPermissions.join(', ') || 'None'}`;
-
-                    card.appendChild(commandName);
-                    card.appendChild(commandDescription);
-                    card.appendChild(commandPermissions);
+                    card.addEventListener('click', () => showCommandDetails(command));
 
                     commandList.appendChild(card);
                 });
 
-                setupTabs(); // Initialize the tab functionality after content is loaded
+                setupTabs();
             })
             .catch(error => console.error('Error loading command data:', error));
     });
@@ -226,7 +362,7 @@
                 commandCards.forEach(card => {
                     const cardCategory = card.getAttribute('data-category');
                     if (category === 'All' || cardCategory === category) {
-                        card.style.display = 'block';
+                        card.style.display = 'flex';
                     } else {
                         card.style.display = 'none';
                     }
@@ -234,9 +370,79 @@
             });
         });
 
-        // Trigger click on "All" tab to show all commands by default
-        document.querySelector('.category-tab[data-category="All"]').click();
+        showAllCommands();
     }
+
+    function showAllCommands() {
+        const commandCards = document.querySelectorAll('.command-card');
+        commandCards.forEach(card => {
+            card.style.display = 'flex';
+        });
+    }
+
+    function showCommandDetails(command) {
+        try {
+            console.log('Command details:', command);
+
+            const modal = document.getElementById('commandModal');
+            const modalBody = document.getElementById('modalBody');
+
+            if (!modal || !modalBody) {
+                console.error('Modal elements not found');
+                return;
+            }
+
+            modalBody.innerHTML = `
+                <div class="modal-title">${command.name}</div>
+                <div class="modal-section">
+                    <div class="modal-section-title">Description:</div>
+                    <div>${command.description}</div>
+                </div>
+                ${command.options && command.options.length > 0 ? `
+                    <div class="modal-section">
+                        <div class="modal-section-title">Options:</div>
+                        <ul>
+                            ${command.options.map(option => `
+                                <li><strong>${option.name}</strong> (${option.required ? 'Required' : 'Optional'}): ${option.description}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+                <div class="modal-section">
+                    <div class="modal-section-title">Examples:</div>
+                    ${command.examples && command.examples.length ? `
+                        <ul>
+                            ${command.examples.map(example => `<li>${example}</li>`).join('')}
+                        </ul>
+                    ` : '<div>No examples available</div>'}
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-title">Required Permissions:</div>
+                    <div>${command.requiredPermissions && command.requiredPermissions.length ? command.requiredPermissions.map(perm => perm.name).join(', ') : 'None'}</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-title">Category:</div>
+                    <div>${command.category}</div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        } catch (error) {
+            console.error('Error in showCommandDetails:', error);
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('commandModal').style.display = 'none';
+    }
+
+    document.querySelector('.close').addEventListener('click', closeModal);
+
+    window.addEventListener('click', (event) => {
+        if (event.target === document.getElementById('commandModal')) {
+            closeModal();
+        }
+    });
 </script>
 
 </body>
