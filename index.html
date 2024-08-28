@@ -18,7 +18,7 @@
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1c2a3b; /* Matching background color to prevent white flash */
+    background-color: #1c2a3b; 
     background-image: url("assets/backgroundone.png");
     background-size: cover;
     background-position: center;
@@ -28,8 +28,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    backdrop-filter: blur(5px); /* Subtle background blur */
-    text-align: center; /* Center align text */
+    backdrop-filter: blur(5px);
+    text-align: center;
   }
 
   .logo {
@@ -38,7 +38,7 @@
   }
 
   .logo img {
-    width: 700px; /* Further increased logo size */
+    width: 700px;
     height: auto;
   }
 
@@ -58,24 +58,24 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px; /* Increased spacing between pills */
-    padding: 20px; /* Increased padding to container */
-    box-sizing: border-box; /* Ensures padding is included in the width */
+    gap: 30px; 
+    padding: 20px;
+    box-sizing: border-box; 
   }
 
   .pill {
-    background-color: transparent; /* No background inside the pill */
+    background-color: transparent;
     color: #ffffff;
-    font-size: 20px; /* Increased font size */
+    font-size: 20px;
     font-weight: bold;
-    padding: 15px 30px; /* Increased padding for larger buttons */
+    padding: 15px 30px; 
     border-radius: 30px;
-    border: 3px solid #ffffff; /* Increased border thickness */
+    border: 3px solid #ffffff;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s, border-color 0.3s;
-    text-decoration: none; /* Remove underline */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    flex: 0 0 auto; /* Do not grow or shrink */
-    width: 200px; /* Increased width */
+    text-decoration: none;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 200px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -85,9 +85,9 @@
 
   .pill:hover {
     background: rgba(255, 255, 255, 0.15); /* Softer background on hover */
-    color: #f1da93; /* Complementary gold color */
-    border-color: #f1da93; /* Match border color with text color */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Softer shadow */
+    color: #f1da93;
+    border-color: #f1da93;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
   }
 
   .pill:active {
@@ -109,20 +109,19 @@
     display: none !important;
   }
 
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .pill {
       font-size: 16px;
       padding: 10px 20px;
-      width: 160px; /* Adjust width for smaller screens */
+      width: 160px;
     }
 
     .pill-container {
-      gap: 15px; /* Adjust gap for smaller screens */
+      gap: 15px;
     }
 
     .logo img {
-      width: 400px; /* Adjust logo size for smaller screens */
+      width: 400px;
     }
   }
 </style>
