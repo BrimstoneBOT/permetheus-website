@@ -15,7 +15,132 @@
         }
 
         body {
+            font-family: 'Open Sans', sans-serif;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>premium - coming soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        body {
             font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c2a3b;
+            background-image: url("../assets/backgroundone.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            backdrop-filter: blur(5px);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .logo {
+            margin-bottom: 50px;
+        }
+
+        .logo a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo a:hover {
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo img {
+            width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .back-button {
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 2px solid #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #f1da93;
+            border-color: #f1da93;
+        }
+
+        #navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: lowercase;
+        }
+
+        .navbar-link:hover {
+            color: #f1da93;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="../" class="navbar-link">home</a>
+        <a href="../commands" class="navbar-link">commands</a>
+        <a href="../faq" class="navbar-link">faq</a>
+    </div>
+
+    <div class="logo">
+        <a href="https://permetheus.com">
+            <img src="../assets/logo.png" alt="Permetheus Logo">
+        </a>
+    </div>
+    <h1>Permetheus Premium</h1>
+    <p>Our premium features are coming soon! Stay tuned for exciting updates.</p>
+    <a href="/" class="back-button">Back to Home</a>
+</body>
+</html>
+
             margin: 0;
             padding: 0;
             background-color: #1c2a3b;
