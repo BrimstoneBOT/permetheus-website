@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     <style>
-        /* Critical CSS */
         * {
             user-select: none;
             -webkit-user-select: none;
@@ -34,11 +33,9 @@
         }
     </style>
     <script>
-        // Prevent Flash of Unstyled Content (FOUC)
         document.documentElement.classList.add('no-fouc');
     </script>
     <style>
-        /* Rest of your styles */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -97,7 +94,7 @@
             padding: 8px 16px;
             border-radius: 20px;
             transition: background-color 0.3s, color 0.3s;
-            text-transform: lowercase; /* Added to make navbar text lowercase */
+            text-transform: lowercase;
         }
 
         .navbar-link:hover {
@@ -257,7 +254,6 @@
             margin-bottom: 5px;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .category-tab {
                 font-size: 16px;
@@ -324,7 +320,6 @@
     </div>
 
     <div class="command-list">
-        <!-- Command Cards Will Be Inserted Here -->
     </div>
 
     <div id="commandModal" class="modal">
@@ -337,16 +332,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Remove no-fouc class and add loaded class to body
         document.documentElement.classList.remove('no-fouc');
         document.body.classList.add('loaded');
 
-        // Fade in logo
         setTimeout(() => {
             document.querySelector('.logo').classList.add('fade-in');
         }, 300);
 
-        // Fade in content
         setTimeout(() => {
             document.querySelector('.content').classList.add('fade-in');
         }, 800);
@@ -390,12 +382,10 @@
                 categoryTabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
 
-                // Fade out all cards
                 commandCards.forEach(card => {
                     card.style.opacity = '0';
                 });
 
-                // Wait for fade out to complete
                 setTimeout(() => {
                     let visibleCards = 0;
                     commandCards.forEach(card => {
@@ -403,7 +393,6 @@
                         if (category === 'All' || cardCategory === category) {
                             card.style.display = 'flex';
                             visibleCards++;
-                            // Fade in visible cards
                             setTimeout(() => {
                                 card.style.opacity = '1';
                             }, 50);
@@ -412,9 +401,8 @@
                         }
                     });
 
-                    // Adjust the min-height of the command list based on visible cards
                     adjustCommandListHeight(visibleCards);
-                }, 300); // Wait for 300ms (fade out duration)
+                }, 300); 
             });
         });
 
@@ -437,8 +425,8 @@
 
     function adjustCommandListHeight(visibleCards) {
         const commandList = document.querySelector('.command-list');
-        const cardHeight = 75; // Assuming 75px height per card
-        const cardsPerRow = Math.floor(commandList.offsetWidth / 215); // 200px card width + 15px gap
+        const cardHeight = 75; 
+        const cardsPerRow = Math.floor(commandList.offsetWidth / 215); 
         const rows = Math.ceil(visibleCards / cardsPerRow);
         const minHeight = Math.max(400, rows * cardHeight);
         commandList.style.minHeight = `${minHeight}px`;
@@ -456,12 +444,10 @@
                 return;
             }
 
-            // Remove active class from all command cards
             document.querySelectorAll('.command-card').forEach(card => {
                 card.classList.remove('active');
             });
 
-            // Add active class to the clicked command card
             event.currentTarget.classList.add('active');
 
             modalBody.innerHTML = `
@@ -512,7 +498,6 @@
         modal.classList.remove('show');
         setTimeout(() => {
             modal.style.display = 'none';
-            // Remove active class from all command cards when modal is closed
             document.querySelectorAll('.command-card').forEach(card => {
                 card.classList.remove('active');
             });
